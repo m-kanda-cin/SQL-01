@@ -187,7 +187,7 @@ WHERE
     life_expectancy IS NOT NULL
 ORDER BY
     life_expectancy DESC,
-    indep_year
+    indep_year DESC
 ;
 
 -- 問19
@@ -261,9 +261,7 @@ SELECT
     countrylanguages.language AS 'language'
 FROM
     countrylanguages
-    INNER JOIN
-        countries
-ON
+INNER JOIN countries ON
     countrylanguages.country_code = countries.code
 ;
 
@@ -275,12 +273,10 @@ SELECT
     countrylanguages.language AS 'language'
 FROM
     countries
-    JOIN
-        cities
-    ON  countries.code = cities.country_code
-    JOIN
-        countrylanguages
-    ON  countrylanguages.country_code = countries.code
+INNER JOIN cities ON
+    countries.code = cities.country_code
+INNER JOIN countrylanguages ON
+    countrylanguages.country_code = countries.code
 ;
 
 -- 問27
@@ -290,9 +286,8 @@ SELECT
     countries.name AS 'name'
 FROM
     celebrities
-    LEFT OUTER JOIN
-        countries
-    ON  celebrities.country_code = countries.code
+LEFT OUTER JOIN countries ON
+    celebrities.country_code = countries.code
 ;
 
 -- 問28
@@ -360,7 +355,7 @@ SELECT
 FROM
     celebrities
 WHERE
-    substr(birth, 1, 4) = 1980
+    substr(birth, 1, 4) = 1991
 UNION
 SELECT
     substr(birth, 1, 4) AS '誕生年',
