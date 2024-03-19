@@ -18,11 +18,11 @@ FROM
 
 -- 問3
 -- ヨーロッパ以外に属する国をすべて抽出してください。
-SELECT
+**SELECT
     *
-FROM
+**FROM
     countries
-WHERE
+**WHERE
     continent != 'Europe'
 ;
 
