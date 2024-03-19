@@ -8,11 +8,11 @@ FROM
 
 -- 問2
 -- ヨーロッパに属する国をすべて抽出してください。
-SELECT
+//SELECT
     *
-FROM
+//FROM
     countries
-WHERE
+//WHERE
     continent = 'Europe'
 ;
 
